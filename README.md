@@ -4,9 +4,11 @@ This handy program allows for a Slack bot to send a message to a
 channel when a specified keyword is contained in the title of new posts in a subreddit.
 I run this program 24/7 on a Raspberry Pi.
 
+## Quickstart Guide
+
 ### Requirements
 A Reddit application and Slack bot in a channel are required.
-You can register a Reddit applcation [here](https://www.reddit.com/prefs/apps/)
+You can register a Reddit applcation [here](https://www.reddit.com/prefs/apps/).
 
 ### How it works
 
