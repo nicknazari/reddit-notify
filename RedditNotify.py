@@ -1,3 +1,6 @@
+# github: nicknazari
+# 2018
+
 import time
 import praw
 from slackclient import SlackClient
@@ -12,21 +15,28 @@ keywords = ['add any keywords here, you can insert multiple']
 subToSearch = 'subreddit'
 channelToSendMessage = 'channel to send messages to'
 
+# other things to define like tokens and client information
+# token can be found at https://api.slack.com/custom-integrations/legacy-tokens
+# reddit information can be found at https://www.reddit.com/prefs/apps/ 
+token = ''
+reddit_client_id = ''
+reddit_client_secret = ''
+reddit_user_agent = 'redditNotify bot by u/InsideAnalysis, github: nicknazari'
+slackbot_username = ''
+
 # this func creates the chat function for slack
 def slack_message(message, channelToSend):
 
-	# token can be found at https://api.slack.com/custom-integrations/legacy-tokens
-	token = 'slack token'
 	sc = SlackClient(token)
 
 	sc.api_call('chat.postMessage', channel=channelToSend,
-			    text=message, username='bot username',
+			    text=message, username=slackbot_username,
 				icon_emoji=':robot_face:')
 
 # this connects to the reddit app to interact and use API
-reddit = praw.Reddit(client_id = 'client id',
-					 client_secret = 'client secret',
-					 user_agent = 'user agent')
+reddit = praw.Reddit(client_id = reddit_client_id,
+					 client_secret = reddit_client_secret,
+					 user_agent = reddit_user_agent)
 
 # infinitely check the subreddit every two seconds
 while True:
@@ -49,7 +59,7 @@ while True:
 		titles.append(submission.title)
 		links.append(submission.url)
 
-	# check for the keyword in every title, add it to the sendQueue (titles) and sendQueueL (links) ONLY IF IT CONTAINS THE KEYWORD
+	# check for the keywords in every title, add it to the sendQueue (titles) and sendQueueL (links) ONLY IF IT CONTAINS THE KEYWORD
 	for title in titles:
 		for keyword in keywords:
 			if keyword in title:
@@ -75,7 +85,7 @@ while True:
 	# every iteration except every 15th, print the iteration. Add an 's' after it if that iteration's result sent a notification
 	if iterations % 15 != 0:
 		print(str(iterations), end='')
-		if sent == True:
+		if sent:
 			print('s', end='')
 		print(', ', end='')
 
