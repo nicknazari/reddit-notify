@@ -6,6 +6,13 @@ I run this program 24/7 on a Raspberry Pi.
 
 ## Quickstart Guide
 
+### Dependencies
+Required modules: `praw` and `slackclient`. They are easily installed with pip:
+
+`pip install praw`
+
+`pip install slackclient`
+
 ### Requirements
 A Reddit application and Slack bot in a channel are required.
 You can register a Reddit applcation [here](https://www.reddit.com/prefs/apps/).
