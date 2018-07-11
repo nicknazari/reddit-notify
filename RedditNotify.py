@@ -9,7 +9,7 @@ iterations = 1
 
 # define search keyword and subreddit here, these are the essential parts of the program
 keywords = ['add any keywords here, you can insert multiple']
-subToSearch = 'subreddit to check'
+subToSearch = 'subreddit'
 channelToSendMessage = 'channel to send messages to'
 
 # this func creates the chat function for slack
