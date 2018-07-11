@@ -3,7 +3,7 @@
 This handy program allows for a Slack bot to send a message to a
 channel when a specified keyword is contained in the title of new posts in a subreddit.
 
-### Requirements:
+### Requirements
 A Reddit application and Slack bot in a channel are required.
 
 ### How it works
