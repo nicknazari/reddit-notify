@@ -1,33 +1,36 @@
 # github: nicknazari
-# 2018
+# may,june,july 2018
+
+# specify all values in config.py
 
 import time
 import praw
 from slackclient import SlackClient
+import config
 
-# all of the sent titles and links are stored here and checked before sending mail to avoid multiple messages of the same post. iterations are increased by 1 every search process
+# all of the sent titles and links are stored here and checked before sending mail to avoid multiple messages of the same post. iterations int is increased by 1 every search process
 doneTitles = []
 doneLinks = []
 iterations = 1
 
 # define search keyword and subreddit here, these are the essential parts of the program
-keywords = ['add any keywords here, you can insert multiple']
-subToSearch = 'subreddit'
-channelToSendMessage = 'channel to send messages to'
+keywords = config.keywords
+subToSearch = config.subToSearch
+channelToSendMessage = config.channelToSendMessage
 
 # other things to define like tokens and client information
 # token can be found at https://api.slack.com/custom-integrations/legacy-tokens
 # reddit information can be found at https://www.reddit.com/prefs/apps/ 
-token = ''
-reddit_client_id = ''
-reddit_client_secret = ''
+slackToken = config.slackToken
+reddit_client_id = config.reddit_client_id
+reddit_client_secret = config.reddit_client_secret
 reddit_user_agent = 'redditNotify bot by u/InsideAnalysis, github: nicknazari'
-slackbot_username = ''
+slackbot_username = config.slackbot_username
 
 # this func creates the chat function for slack
 def slack_message(message, channelToSend):
 
-	sc = SlackClient(token)
+	sc = SlackClient(slackToken)
 
 	sc.api_call('chat.postMessage', channel=channelToSend,
 			    text=message, username=slackbot_username,
