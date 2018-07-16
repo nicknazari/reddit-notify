@@ -11,7 +11,7 @@ reddit_user_agent = 'redditNotify bot by u/InsideAnalysis, github: nicknazari'
 slackbot_username = ''
 
 # define search keyword and subreddit here, these are the essential parts of the program
-keywords = ['add any keywords here, you can insert multiple']
+keywords = ['add all search keywords here','you can insert multiple']
 # add '+' between each subreddit to search multiple
 subToSearch = 'subreddit+anothersubreddit'
 channelToSendMessage = 'channel to send messages to'
