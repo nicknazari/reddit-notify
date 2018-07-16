@@ -6,6 +6,8 @@ I run this program 24/7 on a Raspberry Pi.
 
 ## Quickstart Guide
 
+Make sure to enter all API keys and search terms in config.py before executing the main script
+
 ### Dependencies
 Required modules: `praw` and `slackclient`. They are easily installed with pip:
 
