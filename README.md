@@ -17,7 +17,7 @@ Required modules: `praw` and `slackclient`. They are easily installed with pip:
 
 ### Requirements
 A Reddit application and Slack bot in a channel are required.
-You can register a Reddit applcation [here](https://www.reddit.com/prefs/apps/).
+You can register a Reddit application [here](https://www.reddit.com/prefs/apps/).
 
 ### How it works
 
